@@ -4,7 +4,7 @@ import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.LinkedHashMap;
+import java.util.ArrayList;
 
 @Document
 public class User {
@@ -13,7 +13,7 @@ public class User {
     private ObjectId _id;
     private String firstName;
     private String lastName;
-    LinkedHashMap<String, Long> wallets;
+    ArrayList<Wallet> wallets;
 
     public ObjectId get_id() {
         return _id;
@@ -39,11 +39,11 @@ public class User {
         this.lastName = lastName;
     }
 
-    public LinkedHashMap<String, Long> getWallets() {
+    public ArrayList<Wallet> getWallets() {
         return wallets;
     }
 
-    public void setWallets(LinkedHashMap<String, Long> wallets) {
+    public void setWallets(ArrayList<Wallet> wallets) {
         this.wallets = wallets;
     }
 
