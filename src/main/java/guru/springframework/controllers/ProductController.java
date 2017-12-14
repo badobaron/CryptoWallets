@@ -52,6 +52,11 @@ public class ProductController extends BaseController{
 
     @RequestMapping("product/new")
     public String newProduct(Model model){
+        if(shouldLogIn()) {
+            return redirectToLoginPage();
+        }
+        Person user = google.plusOperations().getGoogleProfile();
+        model.addAttribute("googleProfile", user);
         model.addAttribute("product", new Product());
         return "productform";
     }
