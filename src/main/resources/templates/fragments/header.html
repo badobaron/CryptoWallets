@@ -15,7 +15,7 @@
 <body>
 
 <div class="container">
-    <div th:fragment="header">
+    <div th:fragment="header(givenName)">
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -28,13 +28,14 @@
                 </div>
             </div>
         </nav>
-
         <div class="jumbotron">
+
             <div class="row text-center">
                 <div class="">
-                    <h2>Cryptomurrancy</h2>
-
-                    <h3>The Future of Finance</h3>
+                    <h2>
+                        Hi <span th:text="${givenName}">Test</span>
+                        <small class="text-muted">Welcome to the Future of Finance!</small>
+                    </h2>
                 </div>
             </div>
             <div class="row text-center">

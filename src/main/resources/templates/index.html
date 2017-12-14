@@ -9,7 +9,7 @@
 <body>
 
 <div class="container">
-    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    <!--/*/ <th:block th:include="fragments/header :: header(${googleProfile.givenName})"></th:block> /*/-->
     <h3>Hi <span th:text="${googleProfile.givenName}"></span>, welcome to the future of finance!</h3>
 </div>
 </body>
