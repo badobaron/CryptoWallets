@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/google")
 public class GoogleController {
 
     private Google google;
@@ -20,8 +19,8 @@ public class GoogleController {
         this.connectionRepository = connectionRepository;
     }
 
-    @GetMapping
-    public String helloFacebook(Model model) {
+    @RequestMapping("/")
+    public String connectToGoogle(Model model) {
         if (connectionRepository.findPrimaryConnection(Google.class) == null) {
             return "redirect:/connect/google";
         }

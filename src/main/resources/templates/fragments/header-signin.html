@@ -20,11 +20,6 @@
             <div class="container-fluid">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#" th:href="@{/}">Home</a>
-                    <ul class="nav navbar-nav">
-                        <li><a href="#" th:href="@{/products}">Send Coins</a></li>
-                        <li><a href="#" th:href="@{/product/new}">View Transactions</a></li>
-                    </ul>
-
                 </div>
             </div>
         </nav>
@@ -34,13 +29,20 @@
                 <div class="">
                     <h2>Cryptomurrancy</h2>
 
-                    <h3>The Future of Finance</h3>
+                    <h3>The Future of Finances</h3>
                 </div>
             </div>
             <div class="row text-center">
                 <img src="../../static/images/golden-coin.png" width="200"
                      th:src="@{/images/golden-coin.png}"/>
             </div>
+            <div class="alert alert-primary" role="alert">
+                You are not signed in to the MurrayCoin trading platform. Click the button to connect this application with your account.
+            </div>
+            <form action="/connect/google" method="POST">
+                <input type="hidden" name="scope" value="profile" />
+                <p><button class="btn btn-primary btn-lg btn-block" type="submit">Sign in with Google</button></p>
+            </form>
         </div>
     </div>
 </div>

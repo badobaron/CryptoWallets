@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head lang="en">
-    <title>Hello Google</title>
+
+    <title>Cryptomurrancy</title>
+
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
 </head>
 <body>
-<h3>Connect to Google</h3>
 
-<form action="/connect/google" method="POST">
-    <input type="hidden" name="scope" value="profile" />
-    <div class="formInfo">
-        <p>You aren't connected to Google yet. Click the button to connect this application with your  account.</p>
-    </div>
-    <p><button type="submit">Connect to Google</button></p>
-</form>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    <form action="/connect/google" method="POST">
+        <input type="hidden" name="scope" value="profile" />
+        <div class="formInfo">
+            <p>You aren't connected to Google yet. Click the button to connect this application with your account.</p>
+        </div>
+        <p><button type="submit">Connect to Google</button></p>
+    </form>
+</div>
 </body>
 </html>

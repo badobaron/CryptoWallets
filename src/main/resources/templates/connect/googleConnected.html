@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head lang="en">
-    <title>Hello Google</title>
+
+    <title>Cryptomurrancy</title>
+
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
 </head>
 <body>
-<h3>Connected to Google</h3>
 
-<p>
-    You are now connected to your Google account.
-    Click <a href="/google">here</a> to see some entries.
-</p>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+
+    <h3>Hello, <span th:text="${googleProfile.givenName}"></span>, welcome to the future of Finances!</h3>
+</div>
 </body>
 </html>
