@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head lang="en">
-
+<head>
+    <script>
+        window.location.href = "/";
+    </script>
     <title>Cryptomurrancy</title>
-
-    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
 </head>
 <body>
-
-<div class="container">
-    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
-
-    <h3>Hello, <span th:text="${googleProfile.givenName}"></span>, welcome to the future of Finances!</h3>
-</div>
+<h3>Connected to Google</h3>
+<p>
+    You are now connected to your Google account.
+    Click <a id="next" href="/">here</a> if you're not redirected automatically.
+</p>
 </body>
 </html>

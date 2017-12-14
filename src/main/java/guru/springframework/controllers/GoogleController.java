@@ -27,10 +27,9 @@ public class GoogleController {
         Person user = google.plusOperations().getGoogleProfile();
 
         System.out.println(google.isAuthorized());
-
         System.out.println(": "+user.getGivenName() +" : "+ user.getEmailAddresses() +" : "+ user.getFamilyName());
         model.addAttribute("googleProfile", user);
-        return "google";
+        return "index";
     }
 
 
