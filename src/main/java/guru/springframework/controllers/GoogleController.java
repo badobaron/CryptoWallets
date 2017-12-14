@@ -9,20 +9,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class GoogleController {
-
-    private Google google;
-    private ConnectionRepository connectionRepository;
+public class GoogleController extends BaseController {
 
     public GoogleController(Google google, ConnectionRepository connectionRepository) {
-        this.google = google;
-        this.connectionRepository = connectionRepository;
+        super(google, connectionRepository);
     }
 
     @RequestMapping("/")
     public String connectToGoogle(Model model) {
-        if (connectionRepository.findPrimaryConnection(Google.class) == null) {
-            return "redirect:/connect/google";
+        if(shouldLogIn()) {
+            return redirectToLoginPage();
         }
         Person user = google.plusOperations().getGoogleProfile();
 
